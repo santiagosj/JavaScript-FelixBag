@@ -1,11 +1,14 @@
 /*
 1. Making use of valueOf property 
 const add = (a) => {
+
     let sum = a;
+    
     const resultFn = (y) => {
        sum += y;
        return resultFn;
     }
+    
     resultFn.valueOf = () => sum
   
     return resultFn;

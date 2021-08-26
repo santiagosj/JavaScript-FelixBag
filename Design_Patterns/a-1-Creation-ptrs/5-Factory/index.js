@@ -3,6 +3,11 @@ function Tester(name){
     this.type = "Tester"
 }
 
+function Developer(name){
+    this.name = name;
+    this.type = "Developer";
+}
+
 function EmployeeFactory(){
     this.create = (name,type) => {
         switch(type){

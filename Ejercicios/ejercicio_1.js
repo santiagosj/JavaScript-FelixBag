@@ -128,6 +128,8 @@ function reverseString2(str){
 
 reverseString2("anita lava la tina")
 
+const reverseString3 = (str) => [...str].map((_,i,arr)=>arr[arr.length - 1 - i]).join('')
+
 //==============================================================================
 
 //factorizando un numero con recurción
