@@ -14,8 +14,16 @@
         var http_request = false;
 
         function makeRequest(url) {
-
+            /**
+             * 1-Reasignamos la variable global dentro del scope de la funcion
+            */
             http_request = false;
+
+
+            /**
+             * 2- comporobamos que el objeto window contiene XMLHttpRequest y 
+             * generamos la instancia del bojeto activeX
+             */
 
             if (window.XMLHttpRequest) { // Mozilla, Safari,...
                 http_request = new XMLHttpRequest();
@@ -33,10 +41,17 @@
                 }
             }
 
+            /**
+             * 3-chequeamos la rta http
+            */
+
             if (!http_request) {
                 alert('Falla :( No es posible crear una instancia XMLHTTP');
                 return false;
             }
+            /**
+             * 4-y si no hay ningun err la ejecucion pasa a alertContents
+            */
             http_request.onreadystatechange = alertContents;
             http_request.open('GET', url, true);
             http_request.send();
@@ -44,7 +59,11 @@
         }
 
         function alertContents() {
-
+            /**
+             * function para chquear los estados de la peticion y
+             * generar el alert con la data del archivo xml.
+             * 
+            */
             if (http_request.readyState == 4) {
                 if (http_request.status == 200) {
                     var xmldoc = http_request.responseXML;

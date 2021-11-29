@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
 <root>
     Esto es una prueba
-    <date>27/11/2027</date>
+    y cualquier texto dentro de la etiqueta root
+    va a ser leido.
 </root>
