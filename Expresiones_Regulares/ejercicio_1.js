@@ -5,19 +5,19 @@ let miExpReg = /Hola/;
 let result_0 = miExpReg.test(miCadena)
 console.log(result_0) //true
 
- //es posible buscar cadenas literales
+//es posible buscar cadenas literales
 
- let dondeEstaWally = "Willy, Wally, Waldo"
- let wallyExpReg = /Wally/;
- let result_1 = wallyExpReg.test(dondeEstaWally)
- console.log(result_1)
+let dondeEstaWally = "Willy, Wally, Waldo"
+let wallyExpReg = /Wally/;
+let result_1 = wallyExpReg.test(dondeEstaWally)
+console.log(result_1)
 
- //multiples cadenas literales
+//multiples cadenas literales
 
- let cadena = "Esta es mi cadena y de repente un apareció perro"
- let miExpReg_2 = /sapo|gato|pez|perro/
- let result_2 = miExpReg_2.test(cadena)
- console.log(result_2)
+let cadena = "Esta es mi cadena y de repente apareció perro"
+let miExpReg_2 = /sapo|gato|pez|perro/
+let result_2 = miExpReg_2.test(cadena)
+console.log(result_2)
 
 //ignore case
 
@@ -43,14 +43,14 @@ console.log(result_5)
 //match con periodo comodín
 
 let expresionCadena = "una canción termina con una acción que desencadena una reacción"
-let miExpReg_6 =/ción./g
+let miExpReg_6 = /ción./g
 let result_6 = expresionCadena.match(miExpReg_6)
 console.log(result_6)
 
 //match con multiples posibilidades, encotrando todas las vocales
 
 let citaTextual = "La inducción matemática demuestra que podemos subir tan alto como queramos en una escalera, demostrando que podemos bajar al peldaño inferior (la base ) y que de cada peldaño podemos subir al siguiente (el escalón )"
-let miExpReg_7 =/[aeiou]/gi
+let miExpReg_7 = /[aeiou]/gi
 let result_7 = citaTextual.match(miExpReg_7)
 console.log(result_7.length)
 
