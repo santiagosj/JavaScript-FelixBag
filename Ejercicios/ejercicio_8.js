@@ -56,3 +56,10 @@ const re = /java/i;
 const str = "Javascript";
 const result = re.test(str);
 console.log(result);
+
+// funcion para separar un array en arrays 
+
+const chunkArray = (arr, size) =>
+    arr.length > size
+        ? [arr.slice(0, size), ...chunkArray(arr.slice(size), size)]
+        : [arr]
