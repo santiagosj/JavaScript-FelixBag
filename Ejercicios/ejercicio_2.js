@@ -3,9 +3,9 @@
 const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
 const squareList = (arr) => {
   "use strict";
-  
+
   const squaredIntegers = arr.filter(num => num % 2 == 0 && num > 1).map(num => num * num);
-  
+
   return squaredIntegers;
 };
 
@@ -15,38 +15,38 @@ console.log(squaredIntegers);
 //==========================================================================
 //operador de propagacion ejemplo super simple, IIFE, use strict, reduce
 
-const sum = (function() {
+const sum = (function () {
 
   "use strict";
 
   return function sum(...args) {
-   
+
     return args.reduce((a, b) => a + b, 0);
-    
+
   };
 
 })();
 
-console.log(sum(1, 2, 3)); 
+console.log(sum(1, 2, 3));
 //==========================================================================
 //el mismo resultado que la funcion de arriba
- let arrX = [1, 2, 3];
- const sum2 = (num, total) =>{
-    return num + total;
- }
+let arrX = [1, 2, 3];
+const sum2 = (num, total) => {
+  return num + total;
+}
 
- arrX.reduce(sum2);
+arrX.reduce(sum2);
 
 //==========================================================================
 const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
 
 let arr2;
 
-(function() {
+(function () {
 
   "use strict";
 
-  arr2 = [...arr1]; 
+  arr2 = [...arr1];
 
 })();
 
@@ -61,13 +61,13 @@ const AVG_TEMPERATURES = {
 
 function getTempOfTmrw(avgTemperatures) {
   "use strict";
-  
-  const { tomorrow : tempOfTomorrow } = avgTemperatures; 
-  
+
+  const { tomorrow: tempOfTomorrow } = avgTemperatures;
+
   return tempOfTomorrow;
 }
 
-console.log(getTempOfTmrw(AVG_TEMPERATURES)); 
+console.log(getTempOfTmrw(AVG_TEMPERATURES));
 
 //========================================================================
 
@@ -80,12 +80,12 @@ function getMaxOfTmrw(forecast) {
 
   "use strict";
 
-    const {tomorrow :{max : maxOfTomorrow} } = forecast; 
-  
+  const { tomorrow: { max: maxOfTomorrow } } = forecast;
+
   return maxOfTomorrow;
 }
 
-console.log(getMaxOfTmrw(LOCAL_FORECAST)); 
+console.log(getMaxOfTmrw(LOCAL_FORECAST));
 
 //========================================================================
 
@@ -94,20 +94,20 @@ let a = 8, b = 6;
 (() => {
 
   "use strict";
-  
- [a, b] = [b, a]
-  
+
+  [a, b] = [b, a]
+
 })();
-console.log(a); 
-console.log(b); 
+console.log(a);
+console.log(b);
 
 //=======================================================================
-const source = [1,2,3,4,5,6,7,8,9,10];
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 function removeFirstTwo(list) {
   "use strict";
-  
-  const [,,...arr] = list; 
-  
+
+  const [, , ...arr] = list;
+
   return arr;
 }
 const arr = removeFirstTwo(source);
@@ -123,17 +123,20 @@ const stats = {
   min: -0.75,
   average: 35.85
 };
-const half = (function() {
-  "use strict"; 
+const half = (function () {
+  "use strict";
 
-  return function half({max, min}) {
-    
+  return function half({ max, min }) {
+
     return (max + min) / 2.0;
   };
-  
+
 })();
-console.log(stats); 
-console.log(half(stats)); 
+
+// const half = ({max, min}) => (max + min) / 2.0; 
+
+console.log(stats);
+console.log(half(stats));
 
 //========================================================================
 //template literal
@@ -146,10 +149,10 @@ const result = {
 
 function makeList(arr) {
   "use strict";
- 
-  const resultDisplayArray = [ `<li class="text-warning">no-var</li>`,
-                               `<li class="text-warning">var-on-top</li>`, 
-                               `<li class="text-warning">linebreak</li>` ];
+
+  const resultDisplayArray = [`<li class="text-warning">no-var</li>`,
+    `<li class="text-warning">var-on-top</li>`,
+    `<li class="text-warning">linebreak</li>`];
 
   return resultDisplayArray;
 }
@@ -171,20 +174,20 @@ console.log(saludar)
 
 //======================================================================
 //ES6 crear objeto 
-const crearPersona = (nombre, edad) => ({nombre,edad}); //crea un objeto con esos atributos.
+const crearPersona = (nombre, edad) => ({ nombre, edad }); //crea un objeto con esos atributos.
 
-crearPersona('Santi',32)
+crearPersona('Santi', 32)
 //======================================================================
 //declaracion concisa de funciones 
 const perro = {
-    nombre:'Willy',
-    edad:13,
-    ladrar(){
-        console.log('guau guau!')
-    },
-    saludar(){
-        console.log('mi nombre es ' + `${perro.nombre}`)
-    }
+  nombre: 'Willy',
+  edad: 13,
+  ladrar() {
+    console.log('guau guau!')
+  },
+  saludar() {
+    console.log('mi nombre es ' + `${perro.nombre}`)
+  }
 }
 perro.edad();
 perro.saludar();
@@ -192,15 +195,15 @@ perro.saludar();
 //=====================================================================
 
 class Perro {
-    constructor(nombre, color, edad, comidaFavorita){
-          this.nombre = nombre;
-          this.color = color;
-          this.edad = edad;
-          this.comidaFavorita = comidaFavorita;
-          this.ladrar = () => {
-             console.log('guaaauuuu!')
-          }
-      }
+  constructor(nombre, color, edad, comidaFavorita) {
+    this.nombre = nombre;
+    this.color = color;
+    this.edad = edad;
+    this.comidaFavorita = comidaFavorita;
+    this.ladrar = () => {
+      console.log('guaaauuuu!')
+    }
+  }
 }
 
 
@@ -213,40 +216,40 @@ class Libro {
     this._autor = autor;
   }
   // getter
-  get escritor(){
+  get escritor() {
     return this._autor;
   }
   // setter
-  set escritor(actualizarAutor){
+  set escritor(actualizarAutor) {
     this._autor = actualizarAutor;
   }
 }
 
 const lol = new Libro('anonimo');
 
-console.log(lol.escritor);  
+console.log(lol.escritor);
 
 lol.escritor = 'Agente molder';
 
-console.log(lol.escritor);  
+console.log(lol.escritor);
 
 //ejemplo-2
 
-class Termostato{
+class Termostato {
 
-  constructor(fahrenheit){
+  constructor(fahrenheit) {
 
-       this.fahrenheit = fahrenheit;
+    this.fahrenheit = fahrenheit;
 
-   }
-     get temperatura(){
-         return 5 / 9 * (this.farenheit - 32);
-     }
+  }
+  get temperatura() {
+    return 5 / 9 * (this.farenheit - 32);
+  }
 
-     set temperatura(celsius){
-         this.farenheit = celsius * 9.0 / 5 + 32;
-     }
+  set temperatura(celsius) {
+    this.farenheit = celsius * 9.0 / 5 + 32;
+  }
 
- }
+}
 
- const temperatura = new Termostato(25) //paso la temperatura en fahrenheits y la devuelve en celsius.
+const temperatura = new Termostato(25) //paso la temperatura en fahrenheits y la devuelve en celsius.

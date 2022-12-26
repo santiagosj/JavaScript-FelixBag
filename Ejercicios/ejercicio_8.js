@@ -63,3 +63,7 @@ const chunkArray = (arr, size) =>
     arr.length > size
         ? [arr.slice(0, size), ...chunkArray(arr.slice(size), size)]
         : [arr]
+
+const suma = (...args) => {
+    return args.reduce((a, b) => a + b, 0)
+}        
